@@ -6,9 +6,7 @@
 var should = require('should'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
-  <
-%= classifiedSingularName %> = mongoose.model('
-<%= classifiedSingularName %>');
+  <%= classifiedSingularName %> = mongoose.model('<%= classifiedSingularName %>');
 
   /**
    * Globals
@@ -19,8 +17,7 @@ var should = require('should'),
   /**
    * Unit tests
    */
-  describe('
-<%= humanizedSingularName %> Model Unit Tests:', function() {
+  describe('<%= humanizedSingularName %> Model Unit Tests:', function() {
 	beforeEach(function(done) {
 		user = new User({
 			firstName: ' Full',
@@ -33,8 +30,7 @@ var should = require('should'),
 
 		user.save(function() {
 			<%= camelizedSingularName %> = new <%= classifiedSingularName %>({
-				name: '
-<%= humanizedSingularName %> Name',
+				name: '<%= humanizedSingularName %> Name',
 				user: user
 			});
 
