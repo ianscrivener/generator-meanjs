@@ -57,7 +57,7 @@
 			});
 
 			// Create a sample <%= humanizedPluralName %> array that includes the new <%= humanizedSingularName %>
-			var sample<%= classifiedPluralName %> = [sample<%= classifiedSingularName %>];
+			var sample<%= classifiedPluralName %>Arr = [sample<%= classifiedSingularName %>];
 
 			// Set GET response
 			$httpBackend.expectGET('api/<%= slugifiedPluralName %>').respond(sample<%= classifiedPluralName %>);
@@ -67,7 +67,7 @@
 			$httpBackend.flush();
 
 			// Test scope value
-			expect(scope.<%= camelizedPluralName %>).toEqualData(sample<%= classifiedPluralName %>);
+			expect(scope.<%= camelizedPluralName %>).toEqualData(sample<%= classifiedPluralName %>Arr);
 		}));
 
 		it('$scope.findOne() should create an array with one <%= humanizedSingularName %> object fetched from XHR using a <%= camelizedSingularName %>Id URL parameter', inject(function(<%= classifiedPluralName %>) {
